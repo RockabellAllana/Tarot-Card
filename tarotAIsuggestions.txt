@@ -1,0 +1,42 @@
+import random
+
+# 1. Define the full tarot deck (abbreviated for example)
+TAROT_CARDS = [
+    # Major Arcana
+    "The Fool", "The Magician", "The High Priestess", "The Empress", "The Emperor",
+    "The Hierophant", "The Lovers", "The Chariot", "Strength", "The Hermit",
+    "Wheel of Fortune", "Justice", "The Hanged Man", "Death", "Temperance",
+    "The Devil", "The Tower", "The Star", "The Moon", "The Sun",
+    "Judgement", "The World",
+    # Minor Arcana (only partial for brevity)
+    "Ace of Cups", "Two of Cups", "Three of Cups", "Four of Cups", "Five of Cups",
+    "Six of Cups", "Seven of Cups", "Eight of Cups", "Nine of Cups", "Ten of Cups",
+    # Add the rest of the 78 cards here...
+]
+
+# 2. Initialize and shuffle the deck
+def shuffle_deck():
+    deck = TAROT_CARDS.copy()
+    random.shuffle(deck)
+    return deck
+
+# 3. Draw N cards from the deck
+def draw_cards(deck, num_cards):
+    return [deck.pop(0) for _ in range(num_cards)]
+
+# 4. Interpret the spread
+def interpret_reading(cards, positions):
+    print("🔮 Your Tarot Reading:")
+    for i in range(len(cards)):
+        print(f"{positions[i]}: {cards[i]}")
+
+# 5. Main function
+def main():
+    deck = shuffle_deck()
+    positions = ["Past", "Present", "Future"]
+    reading = draw_cards(deck, len(positions))
+    interpret_reading(reading, positions)
+
+if __name__ == "__main__":
+    main()
+###This is an AI GENERATED scrap of what a tarot card code would typically consist of###
